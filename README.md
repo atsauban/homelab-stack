@@ -8,27 +8,6 @@ Production-ready Docker Compose stacks for self-hosted infrastructure — securi
 
 ---
 
-## Architecture
-
-```
-                        Internet
-                           │
-                    ┌──────▼──────┐
-                    │   Traefik   │  reverse proxy + TLS
-                    └──────┬──────┘
-                           │
-          ┌────────────────┼────────────────┐
-          │                │                │
-   ┌──────▼──────┐  ┌──────▼──────┐  ┌──────▼──────┐
-   │  Vaultwarden│  │  Homepage   │  │  Grafana +  │
-   │  (secrets)  │  │ (dashboard) │  │ Prometheus  │
-   └─────────────┘  └─────────────┘  └─────────────┘
-```
-
-Each stack runs on its own isolated bridge network. Traefik is the only entry point exposed to the outside.
-
----
-
 ## Stacks
 
 | Stack | Path | Description |
